@@ -14,7 +14,9 @@
 #include<fstream>
 
 using namespace std;
-
+using std::cout; using std::cin;
+using std::endl; using std::string;
+using std::filesystem::directory_iterator;
 //Creamos la estructura de atracciones
 struct Nodos{
     float x;
@@ -99,17 +101,17 @@ vector<Cercanos_hoteles> buscar_hoteles(Nodos hoteles[], int index, int H){
 
 void mostrar_solucion(vector<vector<Nodos>> solucion_final){
     int score_final = 0;
-    cout<<"Solucion final\n"<<endl;
+    //cout<<"Solucion final\n"<<endl;
     int i = 1;
     for(const auto &iteme : solucion_final){
         float probando = 0;
-        cout<<"Trip "<<i<<": "<<"[";
+        //cout<<"Trip "<<i<<": "<<"[";
         for(const auto &ite : iteme){
-            cout<<"("<<ite.x<<", "<<ite.y<<"), ";
+            //cout<<"("<<ite.x<<", "<<ite.y<<"), ";
             probando += ite.si;
         }
         i++;
-        cout<<"]"<<endl;
+        //cout<<"]"<<endl;
         //cout<<"Score: "<<probando<<endl;
         score_final += probando;
     }
@@ -118,7 +120,7 @@ void mostrar_solucion(vector<vector<Nodos>> solucion_final){
 
 int main(int argc, char** argv){
     //Ver tiempo de ejecucion
-    unsigned t0, t1;
+    double t0, t1;
     t0=clock();
 
     //Solucion final
@@ -303,7 +305,8 @@ int main(int argc, char** argv){
 
 
     }
-
+    mostrar_solucion(solucion_final);
+    cout<<"Con Hill Climbing"<<endl;
     /**/
     //Hill climbing "normal"
     int posicion_del_trip = 0;
