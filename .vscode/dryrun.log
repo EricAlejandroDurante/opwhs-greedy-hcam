@@ -1,6 +1,0 @@
-make.exe --dry-run --always-make --keep-going --print-directory
-make: Entering directory 'c:/Users/ericd/OneDrive/Escritorio/opwhs-greedy-hcam'
- 
-g++ -Wall main.cpp -o opwhs
-make: Leaving directory 'c:/Users/ericd/OneDrive/Escritorio/opwhs-greedy-hcam'
- 
